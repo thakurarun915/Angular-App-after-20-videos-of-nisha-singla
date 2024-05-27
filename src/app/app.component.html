@@ -1,5 +1,13 @@
 <div>
-    <h1 class="text-center">ParentComponent-Root Component</h1>
-
-    <app-child [uname]="username"></app-child>
-</div>
+    <h1 class="text-center">{{ pageTitle }}</h1>
+    <!-- <h2 class="text-center">Parent Component - Root Component</h2> -->
+    <h3>Username: {{ username }}</h3>
+    <ul>
+      <li *ngFor="let user of users">
+        ID: {{ user.id }}, Name: {{ user.name }}, City: {{ user.city }}, Salary: {{ user.salary }}, DOB: {{ user.dob | date }}
+<!-- 
+     //\sfsf -->
+      </li>
+    </ul>
+  </div>
+  
