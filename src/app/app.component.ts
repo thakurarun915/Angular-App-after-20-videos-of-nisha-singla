@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   username: string = 'John Smith';
+
+
+  pageTitle:string="pipes in angular";
+  users:any[]=[
+
+
+    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
+    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
+    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
+    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
+
+
+
+
+  ];
+
+
+
 }
+
