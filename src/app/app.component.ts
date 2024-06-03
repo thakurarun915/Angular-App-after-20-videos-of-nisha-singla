@@ -36,13 +36,17 @@ interface User {
 export class AppComponent implements OnInit {
   pageTitle: string = "pipes in angular";
   users: User[] = [];
+  errorMessage:string="Loading...."
 
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
     this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data;
-    });
+    },(err)=>{
+      this.errorMessage = "Some internal issue while making api call ";
+    }
+  );
   }
 }
 

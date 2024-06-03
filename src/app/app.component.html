@@ -1,15 +1,21 @@
-<div>
+<div> 
   <h1 class="text-center">{{ pageTitle }}</h1>
-  <ul>
-    <li *ngFor="let user of users">
-      <h3>Username: {{ user.username }}</h3>
-      <p>ID: {{ user.id }}, Name: {{ user.name }}</p>
-      <p>City: {{ user.address.city || 'N/A' }}</p>
-      <p>Street: {{ user.address.street || 'N/A' }}</p>
-      <p>Suite: {{ user.address.suite || 'N/A' }}</p>
-      <p>Zipcode: {{ user.address.zipcode || 'N/A' }}</p>
-      <p>Latitude: {{ user.address.geo.lat || 'N/A' }}</p>
-      <p>Longitude: {{ user.address.geo.lng || 'N/A' }}</p>
-    </li>
-  </ul>
+  <div *ngIf="users.length > 0; else noUsers">
+    <ul>
+      <li *ngFor="let user of users">
+        <h3>Username: {{ user.username }}</h3>
+        <p>ID: {{ user.id }}, Name: {{ user.name }}</p>
+        <p>City: {{ user.address.city || 'N/A' }}</p>
+        <p>Street: {{ user.address.street || 'N/A' }}</p>
+        <p>Suite: {{ user.address.suite || 'N/A' }}</p>
+        <p>Zipcode: {{ user.address.zipcode || 'N/A' }}</p>
+        <p>Latitude: {{ user.address.geo.lat || 'N/A' }}</p>
+        <p>Longitude: {{ user.address.geo.lng || 'N/A' }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noUsers>
+    <p class="alert alert-danger text-center">{{errorMessage}}</p>
+  </ng-template>
 </div>
