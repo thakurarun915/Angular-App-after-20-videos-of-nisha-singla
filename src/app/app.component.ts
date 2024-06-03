@@ -1,29 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsersService } from './users.service';
+
+// Define the User and Address interfaces
+interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: {
+    lat: string;
+    lng: string;
+  };
+}
+
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: Address;
+  phone?: string;
+  website?: string;
+  company?: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']  // Make sure to include this line
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  username: string = 'John Smith';
+export class AppComponent implements OnInit {
+  pageTitle: string = "pipes in angular";
+  users: User[] = [];
 
+  constructor(private userService: UsersService) { }
 
-  pageTitle:string="pipes in angular";
-  users:any[]=[
-
-
-    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
-    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
-    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
-    {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1989")},
-
-
-
-
-  ];
-
-
-
+  ngOnInit() {
+    this.userService.getAllUsers().subscribe((data: any) => {
+      this.users = data;
+    });
+  }
 }
+
+
 
