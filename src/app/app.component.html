@@ -1,21 +1,22 @@
-<div> 
-  <h1 class="text-center">{{ pageTitle }}</h1>
-  <div *ngIf="users.length > 0; else noUsers">
-    <ul>
-      <li *ngFor="let user of users">
-        <h3>Username: {{ user.username }}</h3>
-        <p>ID: {{ user.id }}, Name: {{ user.name }}</p>
-        <p>City: {{ user.address.city || 'N/A' }}</p>
-        <p>Street: {{ user.address.street || 'N/A' }}</p>
-        <p>Suite: {{ user.address.suite || 'N/A' }}</p>
-        <p>Zipcode: {{ user.address.zipcode || 'N/A' }}</p>
-        <p>Latitude: {{ user.address.geo.lat || 'N/A' }}</p>
-        <p>Longitude: {{ user.address.geo.lng || 'N/A' }}</p>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <ng-template #noUsers>
-    <p class="alert alert-danger text-center">{{errorMessage}}</p>
-  </ng-template>
-</div>
+</nav>
+<router-outlet></router-outlet>
