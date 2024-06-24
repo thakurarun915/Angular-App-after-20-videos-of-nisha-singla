@@ -11,7 +11,7 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any> {
-    return this.http.get("https://jsonplaceholder.typicode.com/userss")
+    return this.http.get("https://jsonplaceholder.typicode.com/users")
       .pipe(
         catchError((error: any) => {
           return throwError(error);
@@ -19,6 +19,7 @@ export class UsersService {
       );
   }
 }
+
 
 
 

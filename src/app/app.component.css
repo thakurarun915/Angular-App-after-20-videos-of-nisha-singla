@@ -1,3 +1,24 @@
+/* Centered text class */
 .text-center {
-    background-color: black;
+    text-align: center;
+    background-color: black; /* Assuming you want a black background for the text */
+}
+
+/* Specific styles for each link */
+.user-link {
+    color: white;
+    background-color: blue; /* Customize as needed */
+    margin: 10px;
+}
+
+.about-link {
+    color: white;
+    background-color: green; /* Customize as needed */
+    margin: 10px;
+}
+
+.contact-link {
+    color: white;
+    
+    background-color: red; /* Customize as needed */
 }
