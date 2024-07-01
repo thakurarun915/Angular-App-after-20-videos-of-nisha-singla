@@ -7,11 +7,13 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UsersService {
+  
+   url = 'https://jsonplaceholder.typicode.com/';
 
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any> {
-    return this.http.get("https://jsonplaceholder.typicode.com/users")
+    return this.http.get(this.url + 'users')
       .pipe(
         catchError((error: any) => {
           return throwError(error);
