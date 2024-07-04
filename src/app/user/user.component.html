@@ -4,11 +4,16 @@
   
   <ng-template #userList>
     <div *ngIf="users.length > 0; else noUsers">
-      <ul>
-        <li *ngFor="let user of users">
-          {{ user.name }}
-        </li>
-      </ul>
+      
+        <tr  *ngFor="let user of users">
+          <!-- <td><a [routerLink]="['/user', user.id]">{{ user.id }}</a></td> -->
+
+       <td>{{ user.name }}</td> 
+        <!-- <td>{{ user.username }}</td> 
+        <td>{{ user.email }}</td>  -->
+    
+        </tr>
+      
     </div>
   </ng-template>
   

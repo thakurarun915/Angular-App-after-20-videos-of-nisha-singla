@@ -9,6 +9,7 @@ import { UsersService } from '../users.service';
 export class UserComponent implements OnInit {
   users: any[] = [];
   errorMessage: string = '';
+user: any;
 
   constructor(private usersService: UsersService) {}
 
