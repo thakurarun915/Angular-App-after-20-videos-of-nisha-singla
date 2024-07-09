@@ -1,23 +1,22 @@
 <div *ngIf="errorMessage; else userList">
-    <p>Error: {{ errorMessage }}</p>
-  </div>
-  
-  <ng-template #userList>
-    <div *ngIf="users.length > 0; else noUsers">
-      
-        <tr  *ngFor="let user of users">
-          <!-- <td><a [routerLink]="['/user', user.id]">{{ user.id }}</a></td> -->
+  <p>Error: {{ errorMessage }}</p>
+</div>
 
-       <td>{{ user.name }}</td> 
-        <!-- <td>{{ user.username }}</td> 
-        <td>{{ user.email }}</td>  -->
-    
-        </tr>
-      
-    </div>
-  </ng-template>
-  
-  <ng-template #noUsers>
-    <p>No users found.</p>
-  </ng-template>
-  
+<ng-template #userList>
+  <div *ngIf="users.length > 0; else noUsers">
+    <table>
+      <tr *ngFor="let user of users">
+        <td><a [routerLink]="['/user', user.id]">{{ user.id }}</a></td> 
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.address?.city }}</td>
+      </tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #noUsers>
+  <p>No users found.</p>
+</ng-template>

@@ -13,11 +13,14 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { UsersService } from './users.service';
 import { UsersComponent } from './users/users.component';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 
-const routes: Routes = [
-  { path: 'user', component: UserComponent },
+const routes: Routes = [ 
+  { path: 'users', component: UserComponent },
+  { path: 'users/:id', component: UsersComponent },
+
   // Uncomment and correct the following line if you have a `UsersComponent`:
-   { path: 'users/:id', component: UsersComponent },
+  //  { path: 'users/:id', component: UsersComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
 ];
@@ -36,6 +39,7 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
   providers: [UsersService],
