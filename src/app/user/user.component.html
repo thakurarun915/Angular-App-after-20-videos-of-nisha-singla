@@ -1,9 +1,9 @@
-<div *ngIf="errorMessage; else userList">
+<div If="errorMessage; else userList">
   <p>Error: {{ errorMessage }}</p>
 </div>
 
 <ng-template #userList>
-  <div *ngIf="users.length > 0; else noUsers">
+  <div If="users.length > 0; else noUsers">
     <table>
       <tr *ngFor="let user of users">
         <td><a [routerLink]="['/user', user.id]">{{ user.id }}</a></td> 
@@ -14,9 +14,18 @@
         <td>{{ user.address?.city }}</td>
       </tr>
     </table>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="address">Address</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="compony">Compony</a>
+    </li>
+    <router-outlet></router-outlet>
+  </ul>
   </div>
-</ng-template>
+<!-- </ng-template>
 
 <ng-template #noUsers>
   <p>No users found.</p>
-</ng-template>
+</ng-template> -->

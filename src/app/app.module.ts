@@ -13,7 +13,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { UsersService } from './users.service';
 import { UsersComponent } from './users/users.component';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common';
+import { AddressComponent } from './address/address.component';
+import { ComponyComponent } from './compony/compony.component'; // Import CommonModule
 
 const routes: Routes = [ 
   { path: 'users', component: UserComponent },
@@ -32,7 +34,9 @@ const routes: Routes = [
     UserComponent,
     ChildComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    AddressComponent,
+    ComponyComponent
   ],
   imports: [
     BrowserModule,
